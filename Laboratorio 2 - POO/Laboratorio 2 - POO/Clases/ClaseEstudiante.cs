@@ -45,11 +45,30 @@ namespace Laboratorio_2___POO
             id = "2";
             carrera = "Licenciatura en software";
         }
-        
+
         //Metodo de calcular promedio
-        public double CalcularPromedio(float nota)
+        public double CalcularPromedio()
         {
-            return 0; 
+            if (Calificaciones.Count == 0)
+                return 0;
+
+            double sumaPonderada = 0;
+            int sumaCreditos = 0;
+
+            foreach (var c in Calificaciones)
+            {
+                sumaPonderada += c.Nota * c.Materia.Creditos;
+                sumaCreditos += c.Materia.Creditos;
+            }
+
+            return sumaCreditos == 0 ? 0 : sumaPonderada / sumaCreditos;
+        }
+
+        public virtual void MostrarDatos()
+        {
+            Console.WriteLine($"Estudiante: {Nombre} | ID: {Id} | Carrera: {Carrera}");
+            Console.WriteLine($"Promedio: {CalcularPromedio():F2}");
+            Console.WriteLine("------------------------------------------");
         }
 
     }
