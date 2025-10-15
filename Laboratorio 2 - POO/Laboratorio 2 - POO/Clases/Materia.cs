@@ -10,13 +10,13 @@ public class Materia : IMostrable
     public string Nombre
     {
         get => nombre;
-        set => nombre = value ?? throw new ArgumentException("Nombre no puede ser nulo");
+        set => nombre = value ?? throw new ArgumentException("EL nombre no puede ser nulo");
     }
 
     public string Codigo
     {
         get => codigo;
-        set => codigo = value ?? throw new ArgumentException("Código no puede ser nulo");
+        set => codigo = value ?? throw new ArgumentException("El código no puede ser nulo");
     }
 
     public int Creditos
@@ -25,7 +25,7 @@ public class Materia : IMostrable
         set
         {
             if (value <= 0)
-                throw new ArgumentException("Créditos deben ser mayores que 0");
+                throw new ArgumentException("Los créditos deben ser mayores que 0");
             creditos = value;
         }
     }
@@ -36,7 +36,7 @@ public class Materia : IMostrable
         set
         {
             if (value < 0)
-                throw new ArgumentException("Cupos no pueden ser negativos");
+                throw new ArgumentException("Los cupos no pueden ser negativos");
             cupos = value;
         }
     }
@@ -47,7 +47,7 @@ public class Materia : IMostrable
         set
         {
             if (value < 0 || value > Cupos)
-                throw new ArgumentException("Inscritos debe ser >=0 y <= Cupos");
+                throw new ArgumentException("Los inscritos debe ser >=0 y <= Cupos");
             inscritos = value;
         }
     }
@@ -68,7 +68,7 @@ public class Materia : IMostrable
 
     public void MostrarDatos()
     {
-        Console.WriteLine($"Materia: {Nombre} ({Codigo})");
+        Console.WriteLine($"\nMateria: {Nombre} ({Codigo})");
         Console.WriteLine($"Créditos: {Creditos} | Cupos: {Cupos} | Inscritos: {Inscritos}");
 
     }

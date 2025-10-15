@@ -30,14 +30,14 @@ public class Program
             c1, c2, c3
         };
 
-        Console.WriteLine("===== DEMOSTRACIÓN POLIMORFISMO =====");
+        Console.WriteLine("\nUso del polimorfismo");
         foreach (IMostrable i in items)
             i.MostrarDatos();
 
-        Console.WriteLine("===== OPERACIONES ARITMÉTICAS =====");
+        Console.WriteLine("\n\nOperaciones Aritmiticas");
 
         double promedio = e1.CalcularPromedio();
-        Console.WriteLine($"Promedio de {e1.Nombre}: {promedio:F2}");
+        Console.WriteLine($"\nPromedio de {e1.Nombre}: {promedio:F2}");
 
         int cargaSemanal = m1.CalcularCargaSemanal(3);
         Console.WriteLine($"Carga semanal de {m1.Nombre}: {cargaSemanal} horas");

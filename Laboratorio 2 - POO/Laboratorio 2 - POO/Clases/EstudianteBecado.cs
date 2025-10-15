@@ -9,7 +9,7 @@ public class EstudianteBecado : ClaseEstudiante
         set
         {
             if (value < 0 || value > 100)
-                throw new ArgumentException("Porcentaje de beca debe estar entre 0 y 100");
+                throw new ArgumentException("El porcentaje de la beca debe estar entre 0 y 100");
             porcentajeBeca = value;
         }
     }
@@ -28,7 +28,6 @@ public class EstudianteBecado : ClaseEstudiante
     public override void MostrarDatos()
     {
         base.MostrarDatos();
-        Console.WriteLine($"Beca: {PorcentajeBeca}%");
-        Console.WriteLine("------------------------------------------");
+        Console.WriteLine($"\nBeca: {PorcentajeBeca}%");
     }
 }
